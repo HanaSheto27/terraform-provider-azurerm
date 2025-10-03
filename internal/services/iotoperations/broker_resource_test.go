@@ -1,9 +1,12 @@
 package iotoperations_test
 
 import (
+	"context"
+	"fmt"
 	"testing"
 
 	"github.com/hashicorp/go-azure-sdk/resource-manager/iotoperations/2024-11-01/broker"
+	"github.com/hashicorp/terraform-plugin-testing/terraform"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/acceptance"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/acceptance/check"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/clients"
@@ -108,3 +111,4 @@ resource "azurerm_iotoperations_broker" "test" {
   }
 }
 `, data.RandomInteger, data.Locations.Primary, data.Client().SubscriptionID)
+}

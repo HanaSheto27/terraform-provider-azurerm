@@ -10,15 +10,15 @@ import (
 
 // Client wraps the SDK client(s) used by the iotoperations resources.
 type Client struct {
-    BrokerClient *broker.BrokerClient
+	BrokerClient *broker.BrokerClient
 }
 
 // NewClient builds the iotoperations clients used by the provider.
 func NewClient(o *common.ClientOptions) (*Client, error) {
-    brokerClient := broker.NewBrokerClientWithBaseURI(o.ResourceManagerEndpoint)
-    brokerClient.Client.Authorizer = o.ResourceManagerAuthorizer
+	brokerClient := broker.NewBrokerClientWithBaseURI(o.ResourceManagerEndpoint)
+	brokerClient.Client.Authorizer = o.ResourceManagerAuthorizer
 
-    return &Client{
-        BrokerClient: brokerClient,
-    }, nil
+	return &Client{
+		BrokerClient: brokerClient,
+	}, nil
 }
