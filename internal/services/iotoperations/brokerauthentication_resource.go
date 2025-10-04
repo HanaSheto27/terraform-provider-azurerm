@@ -3,7 +3,7 @@ package iotoperations
 import (
 	"fmt"
 
-	"github.com/hashicorp/go-azure-sdk/resource-manager/iotoperations/2024-11te-01/brokerauthentication"
+	"github.com/hashicorp/go-azure-sdk/resource-manager/iotoperations/2024-11-01/brokerauthentication"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/clients"
 	"github.com/hashicorp/terraform-provider-azurerm/internal/timeouts"
