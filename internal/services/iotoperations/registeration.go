@@ -11,45 +11,44 @@ import (
 type Registration struct{}
 
 var (
-    _ sdk.TypedServiceRegistrationWithAGitHubLabel   = Registration{}
-    _ sdk.UntypedServiceRegistrationWithAGitHubLabel = Registration{}
+	_ sdk.TypedServiceRegistrationWithAGitHubLabel   = Registration{}
+	_ sdk.UntypedServiceRegistrationWithAGitHubLabel = Registration{}
 )
 
 func (r Registration) AssociatedGitHubLabel() string {
-    return "service/iot-operations"
+	return "service/iot-operations"
 }
 
 // Name is the name of this Service
 func (r Registration) Name() string {
-    return "IoT Operations"
+	return "IoT Operations"
 }
 
 // WebsiteCategories returns a list of categories which can be used for the sidebar
 func (r Registration) WebsiteCategories() []string {
-    return []string{
-        "IoT Operations",
-    }
+	return []string{
+		"IoT Operations",
+	}
 }
 
 func (r Registration) DataSources() []sdk.DataSource {
-    return []sdk.DataSource{}
+	return []sdk.DataSource{}
 }
 
 func (r Registration) Resources() []sdk.Resource {
-    return []sdk.Resource{
-        BrokerAuthenticationResource{},
-    }
+	return []sdk.Resource{
+		BrokerAuthenticationResource{},
+	}
 }
 
 // SupportedDataSources returns the supported Data Sources supported by this Service
 func (r Registration) SupportedDataSources() map[string]*pluginsdk.Resource {
-    return map[string]*pluginsdk.Resource{}
+	return map[string]*pluginsdk.Resource{}
 }
 
 // SupportedResources returns the supported Resources supported by this Service
 func (r Registration) SupportedResources() map[string]*pluginsdk.Resource {
-    return map[string]*pluginsdk.Resource{
-        "azurerm_broker_authentication":           resourceBrokerAuthentication(),
-
-    }
+	return map[string]*pluginsdk.Resource{
+		"azurerm_broker_authentication": resourceBrokerAuthentication(),
+	}
 }
